@@ -1,0 +1,75 @@
+---
+import { CheckCircle2 } from 'lucide-astro';
+---
+
+<section id="sobre" class="py-24 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      
+      <div class="relative gsap-reveal">
+        <div class="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-2xl bg-brand-beige">
+          <img 
+            src="/profissional/isabel-about.jpeg" 
+            alt="Isabel Grando - Psicóloga Clínica" 
+            class="object-cover w-full h-full opacity-0 transition-opacity duration-500"
+            onload="this.classList.remove('opacity-0')"
+            loading="lazy"
+          />
+        </div>
+        
+        <!-- Elemento decorativo -->
+        <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-brand-beige rounded-full -z-10 blur-2xl opacity-60"></div>
+        <div class="absolute -top-8 -left-8 w-48 h-48 bg-brand-green/10 rounded-full -z-10 blur-2xl opacity-60"></div>
+      </div>
+
+      <div class="gsap-reveal delay-1">
+        <span class="text-brand-green font-medium tracking-wider uppercase text-sm mb-4 block">Sobre Mim</span>
+        <h2 class="text-3xl md:text-4xl font-serif text-brand-greenDark mb-2">Isabel Grando</h2>
+        <p class="text-brand-textMuted font-medium mb-8">Psicóloga Clínica · CRP 12/22453</p>
+        
+        <div class="space-y-6 text-lg text-brand-text leading-relaxed">
+          <p>
+            Acredito profundamente no potencial humano de transformação e reestruturação emocional. Minha prática clínica é fundamentada no acolhimento genuíno e na escuta ativa, oferecendo um espaço seguro, sem julgamentos.
+          </p>
+          <p>
+            Como especialista em <strong class="font-medium text-brand-greenDark">Terapia Cognitivo-Comportamental (TCC)</strong> e <strong class="font-medium text-brand-greenDark">Psicopatologia</strong>, utilizo abordagens cientificamente comprovadas para te auxiliar na identificação e modificação de padrões de pensamento e comportamento que geram sofrimento.
+          </p>
+          <p>
+            Meu objetivo não é apenas tratar sintomas, mas te acompanhar em uma jornada de autoconhecimento, onde você se entende, ressignifica suas dores e constrói uma vida com mais sentido e leveza.
+          </p>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 gap-4">
+          <div class="flex items-center gap-3">
+            <CheckCircle2 class="w-5 h-5 text-brand-green" />
+            <span class="text-brand-text font-medium">Abordagem Acolhedora</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <CheckCircle2 class="w-5 h-5 text-brand-green" />
+            <span class="text-brand-text font-medium">Atendimento Humanizado</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <CheckCircle2 class="w-5 h-5 text-brand-green" />
+            <span class="text-brand-text font-medium">Foco em Transformação</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <CheckCircle2 class="w-5 h-5 text-brand-green" />
+            <span class="text-brand-text font-medium">Segurança Emocional</span>
+          </div>
+        </div>
+        
+        <div class="mt-12">
+          <a 
+            href="https://wa.me/5549000000000?text=Olá%20Isabel,%20gostaria%20de%20agendar%20uma%20consulta."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center px-8 py-4 bg-brand-greenDark text-white rounded-full font-medium transition-all hover:bg-brand-green shadow-soft hover:shadow-lg"
+          >
+            Dar o primeiro passo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

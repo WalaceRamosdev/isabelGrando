@@ -1,0 +1,35 @@
+/// <reference path="../.astro/types.d.ts" />
+/// <reference types="astro/client" />
+
+declare module 'lucide-astro' {
+  export const Menu: any;
+  export const X: any;
+  export const MessageCircle: any;
+  export const Brain: any;
+  export const HeartCrack: any;
+  export const BatteryWarning: any;
+  export const Users: any;
+  export const Target: any;
+  export const Frown: any;
+  export const HelpCircle: any;
+  export const Leaf: any;
+  export const Heart: any;
+  export const ArrowRight: any;
+  export const Activity: any;
+  export const ShieldCheck: any;
+  export const CheckCircle2: any;
+  export const Sun: any;
+  export const Shield: any;
+  export const Sparkles: any;
+  export const MoveUpRight: any;
+  export const HeartHandshake: any;
+  export const Puzzle: any;
+  export const MonitorSmartphone: any;
+  export const MapPin: any;
+  export const Clock: any;
+  export const CalendarCheck: any;
+  export const ChevronDown: any;
+  export const Instagram: any;
+  export const Mail: any;
+  export const Phone: any;
+}

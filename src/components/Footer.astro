@@ -1,0 +1,73 @@
+---
+import { Instagram, MapPin, Mail, Phone } from 'lucide-astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-brand-greenDark text-brand-light/80 py-16 border-t border-brand-green/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      <!-- Marca -->
+      <div class="col-span-1 md:col-span-2 lg:col-span-1">
+        <a href="/" class="flex flex-col mb-6">
+          <span class="font-serif text-2xl font-medium text-white tracking-wide">Isabel Grando</span>
+          <span class="text-sm text-brand-light/60 tracking-widest uppercase mt-1">Psicóloga · CRP 12/22453</span>
+        </a>
+        <p class="text-sm leading-relaxed mb-6">
+          Te acompanho enquanto você se escuta, se entende e se transforma. Terapia Cognitivo-Comportamental para adultos.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-green transition-colors text-white" aria-label="Instagram">
+            <Instagram class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Úteis -->
+      <div>
+        <h4 class="text-white font-serif text-lg mb-6">Navegação</h4>
+        <ul class="space-y-4 text-sm">
+          <li><a href="#sobre" class="hover:text-white transition-colors">Sobre mim</a></li>
+          <li><a href="#como-ajudo" class="hover:text-white transition-colors">Especialidades</a></li>
+          <li><a href="#atendimento" class="hover:text-white transition-colors">Atendimento</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato -->
+      <div>
+        <h4 class="text-white font-serif text-lg mb-6">Contato</h4>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <Phone class="w-5 h-5 text-brand-green shrink-0" />
+            <a href="https://wa.me/5549000000000" class="hover:text-white transition-colors">(49) 00000-0000</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <Mail class="w-5 h-5 text-brand-green shrink-0" />
+            <a href="mailto:contato@isabelgrando.com.br" class="hover:text-white transition-colors">contato@isabelgrando.com.br</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Localização -->
+      <div>
+        <h4 class="text-white font-serif text-lg mb-6">Localização</h4>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <MapPin class="w-5 h-5 text-brand-green shrink-0" />
+            <span>
+              Água Doce, SC<br/>
+              Atendimento Presencial e Online.
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-light/50">
+      <p>&copy; {year} Isabel Grando - Psicóloga. Todos os direitos reservados.</p>
+      <p>Desenvolvido com excelência por <a href="https://www.sitesalphacode.com.br/solucoes/psicologos" target="_blank" rel="noopener" title="Criação de Sites para Psicólogos" class="hover:text-white transition-colors font-medium">Sites Alpha Code</a></p>
+    </div>
+  </div>
+</footer>

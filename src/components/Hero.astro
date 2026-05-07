@@ -1,0 +1,98 @@
+---
+import { MessageCircle } from 'lucide-astro';
+---
+
+<section class="relative min-h-[90vh] sm:min-h-screen flex items-center pt-20 overflow-hidden bg-brand-light">
+  <!-- Elementos decorativos de fundo -->
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-beige/30 rounded-l-full blur-3xl -z-10 transform translate-x-1/2 opacity-60"></div>
+  <div class="absolute bottom-0 left-0 w-1/3 h-1/2 bg-brand-green/10 rounded-tr-full blur-3xl -z-10 transform -translate-x-1/4"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      
+      <!-- Conteúdo Textual -->
+      <div class="max-w-2xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-brand-greenDark leading-tight mb-6 reveal-hero">
+          Te acompanho enquanto você se escuta, <span class="italic text-brand-green">se entende e se transforma.</span>
+        </h1>
+        
+        <p class="text-lg sm:text-xl text-brand-textMuted mb-8 font-light leading-relaxed reveal-hero delay-1">
+          Psicóloga especializada em TCC e Psicopatologia com atendimento online e presencial em Água Doce.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 reveal-hero delay-2">
+          <a 
+            href="https://wa.me/5549000000000?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20terapia."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center px-8 py-3 bg-brand-greenDark text-white rounded-full text-sm font-medium tracking-wide transition-all hover:bg-brand-green hover:-translate-y-0.5 shadow-sm"
+          >
+            Agendar Consulta
+          </a>
+          <a 
+            href="https://wa.me/5549000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center px-8 py-3 bg-transparent border border-brand-greenDark/30 text-brand-greenDark rounded-full text-sm font-medium tracking-wide transition-all hover:border-brand-greenDark hover:bg-brand-greenDark/5"
+          >
+            <MessageCircle class="w-4 h-4 mr-2" />
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagem Profissional -->
+      <div class="relative lg:h-[600px] flex justify-center lg:justify-end reveal-hero delay-3">
+        <div class="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+
+          <img 
+            src="/profissional/isabel-hero.jpeg" 
+            alt="Isabel Grando - Psicóloga em Água Doce" 
+            class="object-cover w-full h-full opacity-0 transition-opacity duration-500"
+            onload="this.classList.remove('opacity-0')"
+            loading="eager"
+          />
+        </div>
+        
+        <!-- Badge Flutuante (Opcional) -->
+        <div class="absolute -bottom-6 lg:bottom-10 lg:-left-10 bg-white p-5 rounded-2xl shadow-xl max-w-xs animate-bounce-slow">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-green/20 flex items-center justify-center flex-shrink-0">
+              <span class="text-brand-greenDark text-xl">✨</span>
+            </div>
+            <p class="text-sm font-medium text-brand-text leading-tight">Um espaço seguro para sua jornada emocional.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate-bounce-slow {
+    animation: bounce-slow 4s infinite ease-in-out;
+  }
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.fromTo(".reveal-hero", 
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        delay: 0.1
+      }
+    );
+  });
+</script>

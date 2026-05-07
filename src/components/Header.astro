@@ -1,0 +1,107 @@
+---
+import { Menu, X } from 'lucide-astro';
+---
+
+<header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-light/90 backdrop-blur-md border-b border-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="/" class="flex flex-col">
+        <span class="font-serif text-xl sm:text-2xl font-medium text-brand-greenDark tracking-wide">Isabel Grando</span>
+        <span class="text-xs sm:text-sm text-brand-textMuted tracking-widest uppercase">Psicóloga · CRP 12/22453</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#sobre" class="text-brand-text hover:text-brand-green transition-colors text-sm font-medium">Sobre</a>
+        <a href="#como-ajudo" class="text-brand-text hover:text-brand-green transition-colors text-sm font-medium">Especialidades</a>
+        <a href="#atendimento" class="text-brand-text hover:text-brand-green transition-colors text-sm font-medium">Atendimento</a>
+        <a href="#faq" class="text-brand-text hover:text-brand-green transition-colors text-sm font-medium">Dúvidas</a>
+      </nav>
+
+      <!-- CTA Desktop -->
+      <div class="hidden md:flex">
+        <a 
+          href="https://wa.me/5549000000000?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-brand-greenDark hover:bg-brand-green text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-soft hover:shadow-lg transform hover:-translate-y-0.5 duration-200"
+        >
+          Agendar Consulta
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-btn" aria-label="Menu" class="text-brand-text hover:text-brand-green transition-colors">
+          <Menu class="w-6 h-6" id="menu-icon" />
+          <X class="w-6 h-6 hidden" id="close-icon" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-light border-t border-brand-beige absolute w-full left-0 shadow-lg">
+    <div class="px-4 pt-2 pb-6 space-y-1">
+      <a href="#sobre" class="mobile-link block px-3 py-3 text-base font-medium text-brand-text hover:text-brand-green hover:bg-brand-beige/50 rounded-md">Sobre</a>
+      <a href="#como-ajudo" class="mobile-link block px-3 py-3 text-base font-medium text-brand-text hover:text-brand-green hover:bg-brand-beige/50 rounded-md">Especialidades</a>
+      <a href="#atendimento" class="mobile-link block px-3 py-3 text-base font-medium text-brand-text hover:text-brand-green hover:bg-brand-beige/50 rounded-md">Atendimento</a>
+      <a href="#faq" class="mobile-link block px-3 py-3 text-base font-medium text-brand-text hover:text-brand-green hover:bg-brand-beige/50 rounded-md">Dúvidas</a>
+      <a 
+        href="https://wa.me/5549000000000" 
+        target="_blank"
+        class="block w-full text-center mt-4 bg-brand-greenDark text-white px-3 py-3 rounded-md text-base font-medium"
+      >
+        Agendar Consulta
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('main-header');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Efeito ao scroll no header
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header?.classList.add('shadow-soft', 'border-brand-beige');
+        header?.classList.remove('border-transparent');
+      } else {
+        header?.classList.remove('shadow-soft', 'border-brand-beige');
+        header?.classList.add('border-transparent');
+      }
+    });
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+      const isHidden = mobileMenu?.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu?.classList.remove('hidden');
+        menuIcon?.classList.add('hidden');
+        closeIcon?.classList.remove('hidden');
+      } else {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      }
+    }
+
+    mobileMenuBtn?.addEventListener('click', toggleMenu);
+
+    // Fechar menu ao clicar em link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      });
+    });
+  });
+</script>

@@ -1,0 +1,45 @@
+---
+import { Brain, HeartCrack, BatteryWarning, Users, Target, Frown, HelpCircle } from 'lucide-astro';
+
+const dores = [
+  { icon: Brain, text: "Ansiedade constante e pensamentos acelerados" },
+  { icon: HeartCrack, text: "Sensação frequente de vazio ou angústia" },
+  { icon: BatteryWarning, text: "Sobrecarga emocional e esgotamento" },
+  { icon: Users, text: "Dificuldade em manter relacionamentos saudáveis" },
+  { icon: Target, text: "Autocobrança excessiva e perfeccionismo" },
+  { icon: HelpCircle, text: "Dificuldade em se compreender e tomar decisões" },
+];
+---
+
+<section class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16 gsap-reveal">
+      <h2 class="text-3xl md:text-4xl font-serif text-brand-greenDark mb-6">
+        Você tem se sentido assim ultimamente?
+      </h2>
+      <p class="text-lg text-brand-textMuted">
+        Reconhecer o que não vai bem é o primeiro passo para a mudança. Não há problema em admitir que as coisas estão difíceis e que você precisa de apoio.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {dores.map((dor, index) => (
+        <div class="gsap-reveal bg-brand-light p-6 rounded-2xl border border-brand-beige hover:border-brand-green/30 hover:shadow-soft transition-all duration-300 group">
+          <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 text-brand-green group-hover:scale-110 transition-transform duration-300">
+            <dor.icon class="w-6 h-6" />
+          </div>
+          <p class="text-brand-text font-medium leading-relaxed">
+            {dor.text}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center gsap-reveal">
+      <p class="text-xl font-serif text-brand-greenDark italic mb-6">
+        Se você se identificou, saiba que não precisa passar por isso sozinho(a).
+      </p>
+      <div class="w-16 h-1 bg-brand-green/30 mx-auto rounded-full"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+import { MonitorSmartphone, MapPin, CheckCircle2 } from 'lucide-astro';
+---
+
+<section id="atendimento" class="py-24 bg-brand-light relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16 gsap-reveal">
+      <span class="text-brand-green font-medium tracking-wider uppercase text-sm mb-4 block">Formatos</span>
+      <h2 class="text-3xl md:text-4xl font-serif text-brand-greenDark mb-6">
+        Como funciona o atendimento
+      </h2>
+      <p class="text-lg text-brand-textMuted">
+        As sessões duram em média 50 minutos e ocorrem semanalmente. Ofereço um ambiente seguro e acolhedor, seja na modalidade presencial ou online.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      
+      <!-- Online -->
+      <div class="gsap-reveal bg-white p-8 sm:p-10 rounded-3xl shadow-soft border border-brand-beige hover:border-brand-green/30 transition-all duration-300">
+        <div class="w-16 h-16 bg-brand-green/10 rounded-2xl flex items-center justify-center mb-8 text-brand-greenDark">
+          <MonitorSmartphone class="w-8 h-8" />
+        </div>
+        <h3 class="text-2xl font-serif text-brand-greenDark mb-4">Terapia Online</h3>
+        <p class="text-brand-textMuted mb-6 leading-relaxed">
+          Atendimento para qualquer lugar do mundo. Flexibilidade de horários e o conforto de realizar a sessão do seu próprio ambiente seguro, através de plataforma de vídeo segura e sigilosa.
+        </p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center text-brand-text font-medium">
+            <CheckCircle2 class="w-5 h-5 text-brand-green mr-3" /> Sem deslocamento
+          </li>
+          <li class="flex items-center text-brand-text font-medium">
+            <CheckCircle2 class="w-5 h-5 text-brand-green mr-3" /> Maior flexibilidade
+          </li>
+          <li class="flex items-center text-brand-text font-medium">
+            <CheckCircle2 class="w-5 h-5 text-brand-green mr-3" /> Sigilo garantido
+          </li>
+        </ul>
+        <a href="https://wa.me/5549000000000?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20ONLINE." target="_blank" class="block w-full py-4 text-center rounded-xl bg-brand-light text-brand-greenDark font-medium hover:bg-brand-green hover:text-white transition-colors border border-brand-green/20">
+          Agendar Online
+        </a>
+      </div>
+
+      <!-- Presencial -->
+      <div class="gsap-reveal delay-1 bg-white p-8 sm:p-10 rounded-3xl shadow-soft border border-brand-beige hover:border-brand-green/30 transition-all duration-300">
+        <div class="w-16 h-16 bg-brand-green/10 rounded-2xl flex items-center justify-center mb-8 text-brand-greenDark">
+          <MapPin class="w-8 h-8" />
+        </div>
+        <h3 class="text-2xl font-serif text-brand-greenDark mb-4">Terapia Presencial</h3>
+        <p class="text-brand-textMuted mb-6 leading-relaxed">
+          Atendimento presencial em Água Doce - SC. Um consultório cuidadosamente preparado para te receber com conforto, privacidade e total acolhimento.
+        </p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center text-brand-text font-medium">
+            <CheckCircle2 class="w-5 h-5 text-brand-green mr-3" /> Ambiente acolhedor
+          </li>
+          <li class="flex items-center text-brand-text font-medium">
+            <CheckCircle2 class="w-5 h-5 text-brand-green mr-3" /> Contato humano direto
+          </li>
+          <li class="flex items-center text-brand-text font-medium">
+            <CheckCircle2 class="w-5 h-5 text-brand-green mr-3" /> Localização acessível
+          </li>
+        </ul>
+        <a href="https://wa.me/5549000000000?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20PRESENCIAL%20em%20Água%20Doce." target="_blank" class="block w-full py-4 text-center rounded-xl bg-brand-greenDark text-white font-medium hover:bg-brand-green transition-colors shadow-md">
+          Agendar Presencial
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
