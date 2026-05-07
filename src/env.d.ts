@@ -11,13 +11,13 @@ declare module 'lucide-astro' {
   export const Users: any;
   export const Target: any;
   export const Frown: any;
-  export const HelpCircle: any;
+  export const CircleHelp: any;
   export const Leaf: any;
   export const Heart: any;
   export const ArrowRight: any;
   export const Activity: any;
   export const ShieldCheck: any;
-  export const CheckCircle2: any;
+  export const CircleCheck: any;
   export const Sun: any;
   export const Shield: any;
   export const Sparkles: any;
@@ -32,4 +32,5 @@ declare module 'lucide-astro' {
   export const Instagram: any;
   export const Mail: any;
   export const Phone: any;
+  export const Globe: any;
 }
