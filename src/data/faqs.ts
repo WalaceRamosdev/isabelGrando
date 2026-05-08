@@ -1,15 +1,15 @@
 export const faqs = [
   {
     question: "Como funciona a terapia online?",
-    answer: "A terapia online funciona da mesma forma que a presencial, com a mesma duração (50 minutos) e eficácia. É realizada através de uma plataforma de vídeo segura, garantindo total sigilo. Você só precisa de um ambiente tranquilo e boa conexão com a internet."
+    answer: "A terapia online funciona da mesma forma que a presencial, com a mesma duração (50 minutos a 1 hora) e eficácia. É realizada através de uma plataforma de vídeo segura, garantindo total sigilo. Você só precisa de um ambiente tranquilo e boa conexão com a internet."
   },
   {
     question: "Quanto tempo dura uma sessão?",
-    answer: "Cada sessão tem duração média de 50 minutos. A frequência geralmente é semanal, podendo ser ajustada de acordo com a sua necessidade e o andamento do processo terapêutico."
+    answer: "Cada sessão tem duração média de 50 minutos a 1 hora. A frequência geralmente é semanal, podendo ser ajustada de acordo com a sua necessidade e o andamento do processo terapêutico."
   },
   {
     question: "Você atende presencialmente?",
-    answer: "Sim! Meu consultório físico está localizado na cidade de Água Doce - SC, preparado com muito carinho para oferecer um ambiente seguro, confortável e acolhedor."
+    answer: "Sim! O consultório está localizado na cidade de Água Doce - SC, preparado com muito carinho para oferecer um ambiente seguro, confortável e acolhedor."
   },
   {
     question: "O que é TCC (Terapia Cognitivo-Comportamental)?",
