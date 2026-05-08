@@ -19,9 +19,9 @@ export function generateSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Isabel Grando - Psicóloga",
-    "image": defaultSEO.url + defaultSEO.image,
-    "@id": defaultSEO.url,
-    "url": defaultSEO.url,
+    "image": (defaultSEO.url ?? "") + (defaultSEO.image ?? ""),
+    "@id": defaultSEO.url ?? "",
+    "url": defaultSEO.url ?? "",
     "telephone": "+5549991069172",
     "address": {
       "@type": "PostalAddress",

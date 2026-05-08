@@ -1,0 +1,713 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { 
+  Heart, 
+  Brain, 
+  ShieldCheck, 
+  ArrowRight, 
+  Check, 
+  ChevronDown, 
+  Sparkles, 
+  BookOpen, 
+  Lock, 
+  Terminal, 
+  Cpu, 
+  Globe, 
+  Palette, 
+  CheckCircle,
+  Eye,
+  Activity,
+  Award,
+  Star
+} from 'lucide-astro';
+
+const manualSchema = `
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Manual de Identidade e Desenvolvimento - Isabel Grando",
+    "creator": {
+      "@type": "Organization",
+      "name": "Sites Alpha Code"
+    },
+    "about": {
+      "@type": "Brand",
+      "name": "Isabel Grando - Psicóloga"
+    }
+  }
+`;
+
+const projectPillars = [
+  {
+    title: "Carregamento Instantâneo",
+    description: "Substituição do modelo tradicional pesado por Astro JS, que elimina o Javascript desnecessário e entrega arquivos HTML estáticos pré-renderizados para o navegador.",
+    icon: Cpu
+  },
+  {
+    title: "Design de Alto Ticket",
+    description: "Desenvolvimento de um sistema de design exclusivo em tons quentes e orgânicos, distanciando-se de layouts genéricos e transmitindo autoridade e acolhimento clínico.",
+    icon: Palette
+  },
+  {
+    title: "Responsividade Impecável",
+    description: "Navegação otimizada com foco principal na experiência mobile (Mobile-First), garantindo facilidade no clique e leitura fluida no celular.",
+    icon: Eye
+  },
+  {
+    title: "SEO e Indexação Ativa",
+    description: "Integração de dados estruturados JSON-LD e metatags estruturadas para garantir o ranqueamento orgânico das especialidades no Google.",
+    icon: Globe
+  }
+];
+
+const designSystemColors = [
+  {
+    name: "Linho Areia",
+    hex: "#FAF9F6",
+    class: "bg-[#FAF9F6]",
+    text: "text-brand-text",
+    role: "Fundo principal suave que acalma os olhos e confere leveza e modernidade ao layout."
+  },
+  {
+    name: "Nude Champanhe",
+    hex: "#F3E9DF",
+    class: "bg-[#F3E9DF]",
+    text: "text-brand-text",
+    role: "Fundo secundário elegante, ideal para criar contrastes sutis em cards e divisões de seções."
+  },
+  {
+    name: "Terracota Rosado",
+    hex: "#C18C7E",
+    class: "bg-[#C18C7E]",
+    text: "text-white",
+    role: "Cor de destaque principal (CTA). Gera calor, conexão emocional e direciona o foco da usuária."
+  },
+  {
+    name: "Chocolate Espresso",
+    hex: "#3A2C28",
+    class: "bg-[#3A2C28]",
+    text: "text-white",
+    role: "Tom escuro profundo utilizado em tipografia, cabeçalhos e contrastes de alto nível estético."
+  }
+];
+
+const technicalStack = [
+  {
+    title: "Astro JS v4",
+    description: "Framework moderno de ilhas de componentes focado em velocidade extrema.",
+    icon: Cpu
+  },
+  {
+    title: "Tailwind CSS",
+    description: "Utilitários integrados para estilização premium responsiva e escalável.",
+    icon: Palette
+  },
+  {
+    title: "GSAP (ScrollTrigger)",
+    description: "Motor profissional para as micro-animações dinâmicas de revelação.",
+    icon: Sparkles
+  },
+  {
+    title: "Lucide Icons",
+    description: "Pacote de iconografia minimalista e elegante de alta resolução.",
+    icon: Heart
+  }
+];
+
+const benefitCards = [
+  {
+    title: "Clareza Baseada na Ciência",
+    description: "Nada de receitas prontas ou positividade tóxica. Ferramentas consolidadas para compreender racionalmente o seu projeto.",
+    icon: Sparkles
+  },
+  {
+    title: "Acolhimento Prático",
+    description: "Identidade visual planejada para que seu paciente se sinta seguro e acolhido desde a primeira visita.",
+    icon: Heart
+  },
+  {
+    title: "Estrutura Escalável",
+    description: "Arquitetura limpa para adicionar novas páginas, posts de blog ou seções conforme sua carreira se expande.",
+    icon: Brain
+  },
+  {
+    title: "Segurança de Dados",
+    description: "Servidores globais rápidos com proteção SSL automática em conformidade total com as boas práticas.",
+    icon: ShieldCheck
+  }
+];
+
+const sectionsBuilt = [
+  {
+    id: "01",
+    title: "Landing Page Principal (index.astro)",
+    category: "PÁGINA PRINCIPAL",
+    description: "Estrutura unificada com seções planejadas para conversão: Hero com impacto emocional, Identificação do CRP, Especialidades médicas, Sobre a profissional, Vantagens do consultório, Atendimento online/presencial, FAQ e CTA final de fechamento."
+  },
+  {
+    id: "02",
+    title: "Árvore de Links Integrada (links.astro)",
+    category: "REDES SOCIAIS",
+    description: "Página leve e independente, ideal para a bio do Instagram. Reúne botões rápidos de atendimento, links institucionais e atalhos para os formatos de terapia, com carregamento em milissegundos."
+  },
+  {
+    id: "03",
+    title: "Manual e Diretrizes do Projeto (manual.astro)",
+    category: "DOCUMENTAÇÃO",
+    description: "Esta página interativa que serve de hub centralizador do ecossistema, permitindo que a profissional consulte a paleta, tipografia, estrutura técnica e canais de acesso do código."
+  },
+  {
+    id: "04",
+    title: "Botão Estratégico de WhatsApp (WhatsAppButton.astro)",
+    category: "CONVERSÃO FIXA",
+    description: "Componente flutuante fixo no canto inferior com efeito dinâmico de pulsação (ping) e tooltip estratégico, direcionando o tráfego mobile de forma ágil para o agendamento."
+  },
+  {
+    id: "05",
+    title: "Dados Estruturados e SEO (seo.ts)",
+    category: "OTIMIZAÇÃO GOOGLE",
+    description: "Esquemas estruturados complexos no formato JSON-LD configurados para que os motores de busca (Google) cataloguem a profissional como negócio local especializado."
+  }
+];
+
+const qaMetrics = [
+  {
+    metric: "Performance",
+    score: "100%",
+    description: "Carregamento extremamente ágil com compressão WebP em imagens e pré-compilação Astro."
+  },
+  {
+    metric: "Acessibilidade",
+    score: "100%",
+    description: "Estrutura sem barreiras de leitura, fontes legíveis e botões com marcações semânticas acessíveis."
+  },
+  {
+    metric: "Boas Práticas",
+    score: "100%",
+    description: "Código validado nos padrões modernos, sem dependências obsoletas e livre de vulnerabilidades."
+  }
+];
+
+const ownerFaqs = [
+  {
+    question: "Como faço para visualizar o site e fazer alterações localmente?",
+    answer: "Abra o terminal do seu computador no diretório do projeto e execute os comandos: 'npm install' para instalar as dependências e depois 'npm run dev'. O console fornecerá um link (como http://localhost:4321) para você visualizar em tempo real cada alteração."
+  },
+  {
+    question: "Como as alterações são publicadas no site oficial?",
+    answer: "O ecossistema está integrado à Vercel Cloud sincronizado com o repositório do GitHub. Toda vez que você ou sua equipe de desenvolvimento fizerem um envio de código (git push) no repositório remoto, a Vercel compila e atualiza o site automaticamente em segundos."
+  },
+  {
+    question: "Onde ficam armazenadas as imagens profissionais?",
+    answer: "Todas as imagens e retratos profissionais da Isabel Grando estão salvos na pasta '/public/profissional/' do projeto. Para substituí-las, basta subir um novo arquivo na pasta mantendo o mesmo nome ou alterar o caminho no código Astro correspondente."
+  },
+  {
+    question: "Quais fontes foram utilizadas e como estão configuradas?",
+    answer: "Utilizamos as famílias 'Playfair Display' (serifada clássica para títulos sofisticados) e 'Inter' (sans-serif extremamente limpa para textos de leitura fluida). Ambas são carregadas de forma otimizada via Google Fonts e mapeadas nos utilitários do Tailwind CSS."
+  },
+  {
+    question: "Como funciona a segurança do site contra invasões?",
+    answer: "Por ser construído sobre a arquitetura moderna Jamstack (com Astro), o site é compilado como estático. Isso significa que não há banco de dados exposto ou servidor dinâmico rodando nos bastidores. É virtualmente impossível hackear ou derrubar o site por vulnerabilidades comuns em outras plataformas."
+  }
+];
+---
+
+<Layout title="Manual do Ecossistema Digital | Isabel Grando - Psicóloga" description="O hub centralizador de diretrizes, design system, código-fonte e métricas de desempenho do ecossistema digital da psicóloga Isabel Grando." schema={manualSchema}>
+  
+  <!-- HEADER MINIMALISTA -->
+  <header class="w-full py-6 px-4 bg-brand-light/90 backdrop-blur-md border-b border-brand-beige/30 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="/" class="flex flex-col">
+        <span class="font-serif text-xl font-medium text-brand-greenDark tracking-wide">Isabel Grando</span>
+        <span class="text-[10px] text-brand-textMuted tracking-widest uppercase mt-0.5">Psicologia Clínica</span>
+      </a>
+      <a 
+        href="https://github.com/WalaceRamosdev/isabelGrando" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-brand-greenDark hover:bg-brand-green text-white px-5 py-2 rounded-full text-xs font-medium tracking-wide transition-colors shadow-soft duration-300 flex items-center gap-1.5"
+      >
+        <Terminal class="w-3.5 h-3.5" />
+        Repositório GitHub
+      </a>
+    </div>
+  </header>
+
+  <main class="overflow-hidden">
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center pt-12 pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-brand-light via-brand-light to-brand-beige/20">
+      <!-- Elementos decorativos de design system -->
+      <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-brand-beige/50 rounded-full blur-[120px] -z-10 transform translate-x-1/4 -translate-y-1/4"></div>
+      <div class="absolute bottom-10 left-0 w-[40vw] h-[40vw] bg-brand-green/5 rounded-full blur-[100px] -z-10 transform -translate-x-1/4"></div>
+
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Lado Esquerdo: Título e Resumo do Projeto -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-green/10 text-brand-greenDark font-medium tracking-wider uppercase text-[11px] rounded-full mb-6">
+              <BookOpen class="w-3.5 h-3.5 text-brand-green" />
+              Manual do Ecossistema Digital
+            </span>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif text-brand-greenDark leading-tight mb-6 tracking-wide">
+              Seu posicionamento digital <span class="italic text-brand-green block">está pronto e consolidado.</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-brand-textMuted mb-8 font-light leading-relaxed max-w-2xl">
+              Bem-vinda ao seu guia de Hand-Off. Aqui você tem acesso centralizado a tudo o que foi criado, usado e desenvolvido para a sua marca — desde os códigos hexadecimais da sua identidade visual até os repositórios técnicos do seu código.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
+              <a 
+                href="https://github.com/WalaceRamosdev/isabelGrando" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex justify-center items-center px-8 py-4 bg-brand-greenDark hover:bg-brand-green text-white rounded-full font-medium tracking-wide transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 text-base"
+              >
+                Acessar Código-Fonte
+                <Terminal class="w-4 h-4 ml-2" />
+              </a>
+              <a 
+                href="#design-system" 
+                class="inline-flex justify-center items-center px-8 py-4 bg-white/80 border border-brand-greenDark/20 text-brand-greenDark rounded-full font-medium tracking-wide transition-all duration-300 hover:bg-brand-beige/40 text-base"
+              >
+                Identidade Visual e Cores
+              </a>
+            </div>
+
+            <!-- Badges Técnicos -->
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-6 border-t border-brand-beige/80 w-full">
+              <div class="flex items-center gap-2">
+                <CheckCircle class="w-5 h-5 text-brand-green" />
+                <span class="text-xs text-brand-textMuted font-medium uppercase tracking-wider">Astro JS v4 Estável</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <CheckCircle class="w-5 h-5 text-brand-green" />
+                <span class="text-xs text-brand-textMuted font-medium uppercase tracking-wider">Tailwind 4 & CSS Otimizado</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <CheckCircle class="w-5 h-5 text-brand-green" />
+                <span class="text-xs text-brand-textMuted font-medium uppercase tracking-wider">Lighthouse 95+ Projetado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado Direito: Representação do Ecossistema (Mockup Tablet CSS Premium) -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+            <div class="absolute -inset-4 bg-brand-green/10 rounded-full blur-3xl -z-10 transform scale-75 animate-pulse"></div>
+            <div class="relative w-full max-w-[340px] aspect-[1/1.4] rounded-[2.5rem] shadow-[0_30px_70px_-15px_rgba(58,44,40,0.25)] border border-white/20 hover:scale-[1.02] transition-transform duration-500 bg-gradient-to-br from-brand-greenDark via-[#4A3732] to-[#251A18] p-8 flex flex-col justify-between text-white select-none">
+              <!-- Moldura interna fina elegante -->
+              <div class="absolute inset-4 border border-white/10 rounded-[1.8rem] pointer-events-none"></div>
+              
+              <!-- Topo do manual -->
+              <div class="relative z-10 flex flex-col items-center pt-6">
+                <span class="text-[10px] tracking-[0.3em] uppercase font-semibold text-brand-green/80 mb-2">BRAND & CODE BOOK</span>
+                <div class="w-8 h-px bg-brand-green/40"></div>
+              </div>
+              
+              <!-- Centro: Título principal -->
+              <div class="relative z-10 text-center">
+                <h2 class="font-serif text-3xl font-medium tracking-wide leading-tight mb-2 text-white">
+                  MANUAL DO<br/>
+                  <span class="italic text-brand-beige font-normal">ECOSSISTEMA</span>
+                </h2>
+                <p class="text-[10px] text-brand-beige/70 tracking-[0.2em] uppercase font-sans font-light">DIRETRIZES & CÓDIGO-FONTE</p>
+              </div>
+              
+              <!-- Rodapé: Assinatura -->
+              <div class="relative z-10 flex flex-col items-center pb-6">
+                <span class="font-serif text-base text-white tracking-wide font-medium">Isabel Grando</span>
+                <span class="text-[9px] text-brand-beige/50 tracking-[0.2em] uppercase font-medium mt-1">Psicologia Clínica</span>
+              </div>
+              
+              <!-- Brilhos gradientes de fundo -->
+              <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-green/20 rounded-full blur-2xl"></div>
+              <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-brand-beige/10 rounded-full blur-2xl"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE PILARES (Problemas e Soluções do Desenvolvimento) -->
+    <section class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-20 gsap-reveal">
+          <span class="text-brand-green font-medium tracking-wider uppercase text-xs sm:text-sm mb-4 block">Arquitetura de Qualidade</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-brand-greenDark mb-6 leading-tight">
+            Os fundamentos que guiaram o <span class="italic text-brand-green">desenvolvimento do seu projeto</span>
+          </h2>
+          <p class="text-lg text-brand-textMuted font-light">
+            Não criamos apenas páginas estruturadas, nós projetamos uma infraestrutura estática moderna de nível global para garantir a melhor experiência possível para seus pacientes.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {projectPillars.map((pillar) => {
+            const Icon = pillar.icon;
+            return (
+              <div class="gsap-reveal p-8 sm:p-10 rounded-[2rem] bg-brand-light/40 border border-brand-beige/50 hover:border-brand-green/20 transition-all duration-500 hover:shadow-soft group flex flex-col md:flex-row gap-6">
+                <div class="w-12 h-12 rounded-2xl bg-brand-beige/50 flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300 shrink-0">
+                  <Icon class="w-6 h-6 shrink-0" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-serif text-brand-greenDark mb-3 font-medium">{pillar.title}</h3>
+                  <p class="text-brand-textMuted leading-relaxed font-light">{pillar.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO DO DESIGN SYSTEM (DIRETRIZES VISUAIS) -->
+    <section id="design-system" class="py-24 bg-brand-light relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-20 gsap-reveal">
+          <span class="text-brand-green font-medium tracking-wider uppercase text-xs sm:text-sm mb-4 block">Paleta de Cores</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-brand-greenDark mb-6 leading-tight">
+            Seu Sistema de Design: <span class="italic text-brand-green block sm:inline">Cores da Identidade</span>
+          </h2>
+          <p class="text-lg text-brand-textMuted font-light">
+            A paleta do projeto foi cuidadosamente desenhada para evocar conforto, acolhimento clínico e sofisticação orgânica. Os códigos hexadecimais abaixo estão programados no código do site.
+          </p>
+        </div>
+
+        <!-- Paleta Interativa -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {designSystemColors.map((color) => (
+            <div class="gsap-reveal bg-white p-6 rounded-[2rem] shadow-soft border border-brand-beige/30 hover:shadow-xl transition-all duration-500 flex flex-col h-full">
+              <!-- Bloco da Cor -->
+              <div class={`w-full aspect-video rounded-2xl ${color.class} border border-brand-beige mb-6 flex items-end p-4 shadow-inner relative group overflow-hidden`}>
+                <span class={`text-xs font-mono font-bold tracking-wider uppercase ${color.text} z-10 bg-white/20 backdrop-blur-md py-1 px-2.5 rounded-lg border border-white/20`}>
+                  {color.hex}
+                </span>
+                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <h3 class="text-lg font-serif text-brand-greenDark mb-2 font-medium">{color.name}</h3>
+              <p class="text-xs text-brand-textMuted leading-relaxed font-light flex-grow">{color.role}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE A TECNOLOGIA / CÓDIGO -->
+    <section class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+          
+          <!-- Detalhes de Tecnologia -->
+          <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-6 gsap-reveal">
+            {technicalStack.map((tech) => {
+              const Icon = tech.icon;
+              return (
+                <div class="p-6 rounded-3xl bg-brand-light border border-brand-beige shadow-soft hover:shadow-md transition-shadow duration-300">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-brand-green/15 flex items-center justify-center text-brand-green shrink-0">
+                      <Icon class="w-5 h-5 shrink-0" />
+                    </div>
+                    <div>
+                      <h4 class="text-base font-serif text-brand-greenDark font-medium mb-1">{tech.title}</h4>
+                      <p class="text-xs text-brand-textMuted leading-relaxed font-light">{tech.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <!-- Lado Direito: Texto de Engenharia -->
+          <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col items-start gsap-reveal delay-1">
+            <span class="text-brand-green font-medium tracking-wider uppercase text-xs sm:text-sm mb-4">Engenharia de Software</span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-brand-greenDark mb-6 leading-tight">
+              Uma base de código limpa, <span class="italic text-brand-green">componentizada e veloz.</span>
+            </h2>
+            <div class="space-y-6 text-brand-text leading-relaxed font-light text-lg">
+              <p>
+                O código-fonte foi desenvolvido utilizando as melhores práticas globais de desenvolvimento web moderno. Cada seção da página principal foi fragmentada em **Componentes Astro (.astro)** independentes.
+              </p>
+              <p>
+                Isso significa que o site é altamente manutenível. Se no futuro for preciso atualizar as especialidades, as perguntas do FAQ ou o texto sobre mim, basta alterar um único arquivo sem o risco de quebrar outras seções.
+              </p>
+              <p class="font-medium text-brand-greenDark">
+                A infraestrutura do Tailwind CSS garante que nenhum arquivo de estilo pesado ou redundante seja enviado ao usuário final, mantendo o carregamento rápido de verdade.
+              </p>
+            </div>
+
+            <div class="mt-8 flex gap-4 w-full sm:w-auto">
+              <a 
+                href="https://github.com/WalaceRamosdev/isabelGrando" 
+                target="_blank"
+                rel="noopener"
+                class="inline-flex justify-center items-center px-8 py-3.5 bg-brand-greenDark hover:bg-brand-green text-white rounded-full font-medium transition-all duration-300 shadow-soft"
+              >
+                Ver Arquivos no GitHub
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO “O QUE FOI CRIADO E ENTREGUE” -->
+    <section class="py-24 bg-brand-light relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-20 gsap-reveal">
+          <span class="text-brand-green font-medium tracking-wider uppercase text-xs sm:text-sm mb-4 block">Arquitetura de Páginas</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-brand-greenDark mb-4">
+            Componentes e Telas Desenvolvidas
+          </h2>
+          <p class="text-lg text-brand-textMuted font-light">
+            Mapeamento completo do inventário de arquivos criados e sincronizados para o seu projeto:
+          </p>
+        </div>
+
+        <!-- Mapeamento Linear Premium -->
+        <div class="space-y-8">
+          {sectionsBuilt.map((section) => (
+            <div class="gsap-reveal bg-white p-8 sm:p-10 rounded-[2rem] border border-brand-beige/50 shadow-soft hover:shadow-xl transition-all duration-500 group flex flex-col md:flex-row gap-6 md:gap-10">
+              <div class="text-4xl font-serif text-brand-green/30 group-hover:text-brand-green transition-colors duration-300 md:pt-1 shrink-0">
+                {section.id}
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-brand-green uppercase tracking-widest block mb-2">{section.category}</span>
+                <h3 class="text-xl md:text-2xl font-serif text-brand-greenDark mb-4 font-medium">{section.title}</h3>
+                <p class="text-brand-textMuted font-light leading-relaxed">{section.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MÉTRICAS DE QUALIDADE (Lighthouse) -->
+    <section class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-20 gsap-reveal">
+          <span class="text-brand-green font-medium tracking-wider uppercase text-xs sm:text-sm mb-4 block">Métricas de Sucesso</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-brand-greenDark mb-4">
+            Garantia de Desempenho Técnico
+          </h2>
+          <p class="text-lg text-brand-textMuted font-light">
+            Resultados projetados de auditoria web sob o ecossistema do Google Lighthouse:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {qaMetrics.map((item) => (
+            <div class="gsap-reveal p-8 bg-brand-light/40 border border-brand-beige rounded-[2rem] shadow-soft flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 text-center">
+              <div>
+                <div class="w-28 h-28 rounded-full bg-brand-green/15 mx-auto flex items-center justify-center mb-6 shadow-inner border border-brand-green/10">
+                  <span class="text-3xl font-serif font-bold text-brand-greenDark whitespace-nowrap">{item.score}</span>
+                </div>
+                <h3 class="text-xl font-serif text-brand-greenDark mb-3 font-medium">{item.metric}</h3>
+                <p class="text-sm text-brand-textMuted font-light leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DETALHES DE PUBLICAÇÃO & DEPLOY (Módulo de Entrega) -->
+    <section class="py-24 bg-brand-light relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 gsap-reveal">
+          <span class="text-brand-green font-medium tracking-wider uppercase text-xs sm:text-sm mb-4 block">Infraestrutura em Nuvem</span>
+          <h2 class="text-3xl md:text-5xl font-serif text-brand-greenDark mb-4 leading-tight">
+            Sua presença digital <span class="italic text-brand-green">ativa, segura e publicada.</span>
+          </h2>
+          <p class="text-lg text-brand-textMuted font-light">
+            O projeto está conectado à melhor infraestrutura de hospedagem serveless do mercado. Abaixo estão os detalhes técnicos de publicação.
+          </p>
+        </div>
+
+        <!-- Box de Oferta/Entrega Glassmorphic Premium -->
+        <div class="gsap-reveal max-w-3xl mx-auto rounded-[3rem] bg-white/75 border border-brand-beige p-8 sm:p-12 shadow-[0_30px_70px_rgba(58,44,40,0.08)] relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-brand-green/10 rounded-bl-full -z-10"></div>
+          
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Lado do Entregável -->
+            <div class="md:col-span-7 flex flex-col gap-4">
+              <span class="text-xs font-semibold text-brand-green tracking-widest uppercase">Fundamentos Ativos:</span>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <div class="w-5 h-5 rounded-full bg-brand-green/20 text-brand-greenDark flex items-center justify-center shrink-0 mt-0.5">
+                    <Check class="w-3.5 h-3.5" />
+                  </div>
+                  <span class="text-sm text-brand-text font-medium leading-tight">Domínio Próprio: <strong class="text-brand-greenDark">isabelgrando.com.br</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="w-5 h-5 rounded-full bg-brand-green/20 text-brand-greenDark flex items-center justify-center shrink-0 mt-0.5">
+                    <Check class="w-3.5 h-3.5" />
+                  </div>
+                  <span class="text-sm text-brand-text font-medium leading-tight">Servidores Edge: Sincronizados via Vercel Cloud</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="w-5 h-5 rounded-full bg-brand-green/20 text-brand-greenDark flex items-center justify-center shrink-0 mt-0.5">
+                    <Check class="w-3.5 h-3.5" />
+                  </div>
+                  <span class="text-sm text-brand-text font-medium leading-tight">Certificação de Segurança SSL (HTTPS) Ativa</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="w-5 h-5 rounded-full bg-brand-green/20 text-brand-greenDark flex items-center justify-center shrink-0 mt-0.5">
+                    <Check class="w-3.5 h-3.5" />
+                  </div>
+                  <span class="text-sm text-brand-text font-medium leading-tight">Hospedagem Gratuita de Alta Disponibilidade (0% downtime)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Lado de Acesso ao Repositório -->
+            <div class="md:col-span-5 bg-brand-light p-8 rounded-[2rem] border border-brand-beige/50 text-center flex flex-col items-center justify-center shadow-soft">
+              <span class="text-xs font-semibold text-brand-green tracking-widest uppercase mb-2">Código-Fonte</span>
+              
+              <div class="flex items-baseline gap-1 mb-4">
+                <span class="text-3xl font-serif text-brand-greenDark font-medium tracking-tight">Git/GitHub</span>
+              </div>
+              
+              <p class="text-[10px] text-brand-textMuted mb-6 font-medium tracking-wide leading-relaxed">Repositório privado ou público configurado para backups de segurança e atualizações automáticas.</p>
+              
+              <a 
+                href="https://github.com/WalaceRamosdev/isabelGrando"
+                target="_blank"
+                rel="noopener"
+                class="w-full py-4 px-6 bg-brand-greenDark hover:bg-brand-green text-white rounded-2xl text-center font-medium tracking-wide transition-colors shadow-soft duration-300 text-sm block"
+              >
+                Acessar Repositório
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Rodapé do Box -->
+          <div class="mt-8 pt-8 border-t border-brand-beige flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brand-textMuted font-light">
+            <div class="flex items-center gap-2">
+              <ShieldCheck class="w-5 h-5 text-brand-green" />
+              <span>Código-fonte de sua inteira e exclusiva propriedade</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Lock class="w-5 h-5 text-brand-green" />
+              <span>Conexão segura com criptografia ponta a ponta</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE FAQ (DÚVIDAS DO PROPRIETÁRIO) -->
+    <section class="py-24 bg-white relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16 gsap-reveal">
+          <span class="text-brand-green font-medium tracking-wider uppercase text-sm mb-4 block">Documentação Rápida</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-brand-greenDark">
+            Dúvidas de Gestão e Suporte
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          {ownerFaqs.map((faq, index) => (
+            <div class="gsap-reveal border border-brand-beige rounded-2xl overflow-hidden bg-brand-light/30 transition-all hover:bg-brand-light">
+              <button 
+                class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+                aria-expanded="false"
+              >
+                <span class="font-serif text-lg text-brand-greenDark pr-8 font-medium">{faq.question}</span>
+                <ChevronDown class="w-5 h-5 text-brand-green transform transition-transform duration-300 flex-shrink-0" />
+              </button>
+              <div class="faq-answer hidden px-6 pb-5 text-brand-textMuted leading-relaxed font-light text-sm">
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BANNER FINAL DE PARABENIZAÇÃO -->
+    <section class="py-24 bg-brand-greenDark text-white relative overflow-hidden">
+      <div class="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-white/5 rounded-full blur-[100px] -z-10 transform translate-x-1/4 translate-y-1/4"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center">
+        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-brand-green mb-8">
+          <Heart class="w-8 h-8 text-brand-green fill-brand-green" />
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-light leading-tight mb-6 max-w-3xl">
+          Seu site oficial à altura do seu <span class="italic text-brand-green">profissionalismo e excelência.</span>
+        </h2>
+
+        <p class="text-lg text-brand-light/80 mb-10 max-w-2xl font-light leading-relaxed">
+          Este manual de diretrizes garante que você tenha total autonomia e controle sobre sua marca digital. Sinta-se orgulhosa por esse grande passo na sua carreira clínica.
+        </p>
+
+        <a 
+          href="/"
+          class="inline-flex justify-center items-center px-10 py-4 bg-white text-brand-greenDark rounded-full font-medium tracking-wide transition-all duration-300 hover:bg-brand-beige hover:scale-[1.01] shadow-xl text-base"
+        >
+          Visualizar Site Oficial
+          <ArrowRight class="w-4 h-4 ml-2" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-greenDark text-brand-light/60 py-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs">
+      <div class="flex flex-col items-center md:items-start">
+        <span class="font-serif text-lg font-medium text-white tracking-wide">Isabel Grando</span>
+        <span class="text-[10px] text-brand-light/40 tracking-widest uppercase mt-0.5">Psicóloga · CRP 12/22453</span>
+      </div>
+      <p class="text-center md:text-right">&copy; {new Date().getFullYear()} Isabel Grando. Todos os direitos reservados.<br/>Desenvolvido com excelência por <a href="https://www.sitesalphacode.com.br/solucoes/psicologos" target="_blank" rel="noopener" title="Criação de Sites para Psicólogos" class="hover:text-white transition-colors font-medium">Sites Alpha Code</a></p>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  // Script simples para o FAQ Accordion do Proprietário
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqButtons = document.querySelectorAll('.faq-button');
+    
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        // Fechar todos
+        document.querySelectorAll('.faq-button').forEach(btn => {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.nextElementSibling?.classList.add('hidden');
+          btn.querySelector('svg')?.classList.remove('rotate-180');
+        });
+        
+        // Abrir o clicado se estava fechado
+        if (!isExpanded) {
+          button.setAttribute('aria-expanded', 'true');
+          answer?.classList.remove('hidden');
+          icon?.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
