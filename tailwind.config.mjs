@@ -5,12 +5,12 @@ export default {
     extend: {
       colors: {
         brand: {
-          light: '#F5F5F0',     // Bege muito claro, quase branco
-          beige: '#EFECE5',     // Bege suave para fundos secundários
-          green: '#748A7A',     // Verde terapêutico suave
-          greenDark: '#4A5D50', // Verde mais escuro para texto/contraste
-          text: '#333333',      // Texto principal escuro (quase preto)
-          textMuted: '#666666', // Texto secundário
+          light: '#FAF9F6',     // Linho Areia suave, quase branco
+          beige: '#F3E9DF',     // Nude Champanhe suave para fundos secundários
+          green: '#C18C7E',     // Terracota Rosado / Rosa Queimado suave (Destaque)
+          greenDark: '#3A2C28', // Chocolate Espresso profundo (Textos e Contraste)
+          text: '#3E3532',      // Texto principal escuro quente
+          textMuted: '#726561', // Texto secundário quente amigável
           white: '#FFFFFF',
         }
       },
