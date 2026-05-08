@@ -22,7 +22,7 @@ export function generateSchema() {
     "image": defaultSEO.url + defaultSEO.image,
     "@id": defaultSEO.url,
     "url": defaultSEO.url,
-    "telephone": "+5549000000000", // Update with real number
+    "telephone": "+5549991069172",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Água Doce",
