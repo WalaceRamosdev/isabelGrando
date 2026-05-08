@@ -18,7 +18,7 @@ import { MessageCircle } from 'lucide-astro';
         </h1>
         
         <p class="text-lg sm:text-xl text-brand-textMuted mb-8 font-light leading-relaxed reveal-hero delay-1">
-          Psicóloga especializada em TCC e Psicopatologia. Atendimento psicoterápico para crianças, adolescentes e adultos, online e presencial em Água Doce.
+          Psicóloga especializada em TCC e Psicopatologia. Atendimento psicológico para crianças, adolescentes e adultos, online e presencial em Água Doce.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 reveal-hero delay-2">
@@ -42,28 +42,16 @@ import { MessageCircle } from 'lucide-astro';
         </div>
       </div>
 
-      <!-- Imagem Profissional com Efeito 3D Pop-Out e Moldura Feminina Animada -->
+      <!-- Imagem Profissional -->
       <div class="relative lg:h-[600px] flex justify-center lg:justify-end reveal-hero delay-3">
-        <div class="relative w-full max-w-sm aspect-[4/5] overflow-visible group animate-float-slow">
-          
-          <!-- Aura Luminosa Feminina (Brilho Rosa/Pêssego ao Fundo) -->
-          <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#ebd6c4]/30 rounded-full blur-3xl -z-10 animate-pulse-slow pointer-events-none"></div>
-
-          <!-- Moldura Feminina (Arco clássico com gradiente pêssego/champanhe) -->
-          <div class="absolute bottom-0 left-0 right-0 h-[82%] rounded-t-full rounded-b-[2rem] bg-gradient-to-tr from-[#ebd6c4]/65 via-[#FAF5F0] to-[#FFFDFB] border border-[#e5d4c5] shadow-xl transition-all duration-500 group-hover:shadow-2xl group-hover:border-[#d9c4b2]">
-            <!-- Linha decorativa fina interna acompanhando o formato de arco -->
-            <div class="absolute inset-2.5 rounded-t-full rounded-b-[1.7rem] border border-[#ebd6c4]/40 pointer-events-none"></div>
-          </div>
-
-          <!-- Imagem Cutout (Saltando para fora) -->
+        <div class="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border border-brand-beige/50">
           <img 
-            src="/profissional/isabelGrando-hero.webp" 
+            src="/profissional/isabel-hero.jpeg" 
             alt="Isabel Grando - Psicóloga em Água Doce" 
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-[96%] object-cover object-top origin-bottom opacity-0 transition-all duration-500 group-hover:scale-[1.03] z-10"
+            class="object-cover w-full h-full opacity-0 transition-all duration-700 hover:scale-[1.03]"
             onload="this.classList.remove('opacity-0')"
             loading="eager"
           />
-
         </div>
       </div>
 
