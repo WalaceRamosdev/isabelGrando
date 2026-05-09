@@ -8,7 +8,7 @@ export interface SEOProps {
 
 export const defaultSEO: SEOProps = {
   title: "Isabel Grando - Psicóloga | Terapia Online e Presencial em Água Doce",
-  description: "Psicóloga especializada em TCC e Psicopatologia. Te acompanho enquanto você se escuta, se entende e se transforma. Agende sua consulta.",
+  description: "Psicóloga especializada em TCC e Psicopatologia. Te acompanho enquanto você se escuta, se entende e se transforma. Agende seu atendimento.",
   image: "/og-image.jpg", // Placeholder
   url: "https://isabelgrando.com.br",
   type: "website",
